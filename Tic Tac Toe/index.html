@@ -4,13 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tac Toe</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body{
+            background:url("/Background.png");
+        }
+#header {
+    width: 60vmin;
+    margin: 20px auto;      
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffc7;
+    border: 5px solid;
+    border-radius: 50px;
+    border-color: #b0413e #322ac3 #b0413e #322ac3;
+    min-height: 60px;
+    background-color: rgba(0, 0, 0, 0.50);
+    padding: 10px;            
+}
+
+        .cell{
+  height: 18vmin;
+  width: 18vmin;
+  border-radius: 1rem;
+  border: none;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+  font-size: 8vmin;
+  color: #b0413e;
+  background-color: #ffffc7;
+}
+.board{
+    display: grid;
+    grid-template-columns: repeat(3, 0.1fr);
+    grid-template-rows: repeat(3, 0.1fr);
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+}
+.game{
+      display: grid;
+  grid-template-columns: auto auto;
+  margin-top:100px;
+}
+.score{
+    padding-left:200px;
+    padding-top: 110px;
+    color:white;
+}
+table{
+    font-size: 25px;
+    text-align: center;
+    border:1px solid white;
+    border-radius: 25px;
+    width:300px;
+}
+th{
+    padding-bottom: 30px;
+}
+
+
+    </style>
 </head>
 <body>
-    <h1>Tic Tac Toe</h1>
-    <h1>player1score:<span id="p1s">0</span></h1>
-    <h1>player2score:<span id="p2s">0</span></h1>
+    <h1 id="header">Tic Tac Toe</h1>
+
     <div class="game">
+    <div class="score">
+        <table>
+            <tr><th>Player</th><th>Score</th></tr>
+            <tr><td>X</td><td id="p1s">0</td></tr>
+            <tr><td>O</td><td id="p2s">0</td></tr>
+        </table>
+    </div>
         <div class="board">
             <div class="cell" data-index="0"></div>
             <div class="cell" data-index="1"></div>
@@ -22,8 +87,9 @@
             <div class="cell" data-index="7"></div>
             <div class="cell" data-index="8"></div>
         </div>
-        <button onclick="resetbtn()">reset</button>
+
     </div>
+            <button onclick="resetbtn()">reset</button>
     <script src="app.js" async defer></script>
 </body>
 </html>
